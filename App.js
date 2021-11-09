@@ -23,11 +23,12 @@ export default function App() {
     await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(toSave))
   };
   const doneToDo = async (key) => {
-    let fixToDos = { ...toDos }
-    fixToDos[key].work = !fixToDos[key].work;
-    setToDos(fixToDos);
-    await saveToDos(fixToDos);
+    const updateToDo = {...toDos}
+    updateToDo[key].working = !updateToDo[key].working;
+    setToDos(updateToDo);
+    await saveToDos(updateToDo);
   };
+
   const deleteToDos = async (key) => {
     const newToDos = { ...toDos }
     delete newToDos[key]
