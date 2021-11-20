@@ -62,10 +62,10 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar></StatusBar>
       <View style={styles.mode}>
-        <TouchableOpacity onPress={() => setWork(!work)}>
+        <TouchableOpacity onPress={() => setWork(true)}>
           <Text style={work ? styles.modeTextOn : styles.modeText}>Done</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => setWork(!work)}>
+        <TouchableOpacity onPress={() => setWork(false)}>
           <Text style={work ? styles.modeText : styles.modeTextOn}>Work</Text>
         </TouchableOpacity>
       </View>
